@@ -1,36 +1,14 @@
 fun main() {
-    val banco = BancoDeNomes()
 
-    val nomesSalvos = banco.nomes
+    val assistiramCursoKotlin = listOf("João Pedro", "Mariana", "Bruna")
+    val assistiramCursoAndroid = listOf("João Pedro", "Andressa", "Mariana", "Isaias", "Bruna", "Fernando")
 
-    //banco.nomes.add("João Pedro")
-    banco.salva("João Pedro")
+    val assistiramAmbos = mutableListOf<String>()
+    //val assistiramAmbos2 = assistiramCursoKotlin + assistiramCursoAndroid // a ordem importa..
 
-    println(nomesSalvos)
+    assistiramAmbos.addAll(assistiramCursoAndroid)
+    assistiramAmbos.addAll(assistiramCursoKotlin)
 
-    println(BancoDeNomes().nomes)
+    println(assistiramAmbos.distinct())
 }
 
-class BancoDeNomes {
-    val nomes: Collection<String> get() = dados.toList()
-
-    fun salva(nome: String) {
-        dados.add(nome)
-    }
-
-    companion object {
-        private val dados = mutableListOf<String>()
-    }
-}
-
-fun testaColecao() {
-    val nomes: Collection<String> = mutableListOf("João Pedro", "Andressa", "Sandra", "Mariana")
-
-    for (nome in nomes) println(nome)
-
-    println(nomes)
-
-    println("Tem o nome João Pedro ? ${nomes.contains("João Pedro")}")
-
-    println("Tamanho da coleção: ${nomes.size}")
-}
