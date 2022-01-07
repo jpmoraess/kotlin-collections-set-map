@@ -1,14 +1,21 @@
 fun main() {
 
-    val assistiramCursoKotlin = listOf("João Pedro", "Mariana", "Bruna")
-    val assistiramCursoAndroid = listOf("João Pedro", "Andressa", "Mariana", "Isaias", "Bruna", "Fernando")
+    val assistiramCursoKotlin: Set<String> = setOf("João Pedro", "Mariana", "Bruna")
 
-    val assistiramAmbos = mutableListOf<String>()
-    //val assistiramAmbos2 = assistiramCursoKotlin + assistiramCursoAndroid // a ordem importa..
+    val assistiramCursoAndroid: Set<String> =
+        setOf("João Pedro", "Andressa", "Mariana", "Isaias", "Bruna", "Fernando")
 
+    //val assistiramAmbos = assistiramCursoAndroid + assistiramCursoAndroid // a ordem importa.. -> retorna um list
+
+    //val assistiramAmbos = assistiramCursoKotlin + assistiramCursoAndroid // retorna um set
+
+    val assistiramAmbos = mutableSetOf<String>()
     assistiramAmbos.addAll(assistiramCursoAndroid)
     assistiramAmbos.addAll(assistiramCursoKotlin)
 
-    println(assistiramAmbos.distinct())
+    assistiramAmbos.add("João Pedro")
+    assistiramAmbos.add("Caique")
+
+    println(assistiramAmbos)
 }
 
