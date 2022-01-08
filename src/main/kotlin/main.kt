@@ -4,7 +4,7 @@ fun main() {
         Pair(2, 34.20),
         3 to 25.34,
         4 to 100.0,
-        5 to 150.0,
+        5 to 100.0,
         6 to 80.0
     ) // to -> infix function
 
@@ -48,6 +48,52 @@ fun main() {
     }
 
     println("pedidos pares: $pedidosPares")
+
+
+    /**
+     * Escrita específica de Map
+     */
+
+    // plus
+
+    println(pedidos + Pair(7, 90.0))
+    //println(pedidos + 7 to 90.0) // não funciona
+    println(pedidos + mapOf(8 to 94))
+    println(pedidos)
+
+    // minus
+
+    println(pedidos - 6)
+    println(pedidos)
+    println(pedidos - listOf(1, 2, 3))
+    println(pedidos)
+
+    // putAll
+
+    pedidos.putAll(setOf(7 to 80.0, 8 to 45.2))
+    println(pedidos)
+
+    // plusAsign +=
+
+    pedidos += listOf(9 to 49.0, 10 to 90.20)
+    println(pedidos)
+
+    // remove by keys
+    pedidos.keys.remove(1)
+    println(pedidos)
+
+    // remove by value
+    pedidos.values.remove(25.34)
+    println(pedidos)
+
+    // remove by value quando duplicado... remove sempre o primeiro que for encontrado..
+    pedidos.values.remove(100.0)
+    println(pedidos)
+
+    // minusAsign
+
+    pedidos -= 6 // funciona apenas com a chave
+    println(pedidos)
 }
 
 fun testaMap(pedidos: MutableMap<Int, Double>) {
