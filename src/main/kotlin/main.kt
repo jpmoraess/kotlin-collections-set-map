@@ -31,9 +31,9 @@ fun main() {
     println(pedidos)
     pedidos[5] = 29.30
     println(pedidos)
-    pedidos.putIfAbsent(6, 320.20) // putIfAbsent só adiciona caso não tenha
+    pedidos.putIfAbsent(6, 320.20) // putIfAbsent, adiciona elementos apenas quando a chave não existir.
     println(pedidos)
-    pedidos.putIfAbsent(6, 509.20)// putIfAbsent só adiciona caso não tenha
+    pedidos.putIfAbsent(6, 509.20)// putIfAbsent, adiciona elementos apenas quando a chave não existir.
 
     pedidos.remove(6)
     println(pedidos)
